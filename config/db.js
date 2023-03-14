@@ -6,18 +6,18 @@ dotenv.config();
 const url = process.env.URL;
 
 const db = async () => {
-  try {
+try {
     mongoose.set("strictQuery", false);
     await mongoose.connect(url, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
     });
 
     console.log("MongoDB is connected");
-  } catch (err) {
+} catch (err) {
     console.error(err.message);
     process.exit(1);
-  }
+}
 };
 
 export default db;
