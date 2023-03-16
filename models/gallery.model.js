@@ -1,29 +1,21 @@
 import mongoose from "mongoose";
 
-const programSchema = mongoose.Schema(
+const gallerySchema = mongoose.Schema(
 
     {
-        title:{
+        category: {
             type:String,
             required:true,
         },
-
-        sub_title: {
+        project_Name:{
             type:String,
             required:true,
-        },
-
-        description:{
-            type:String,
         },
         image:{
             type:String,
         }
-        
-
 
     }
 );
-
-const program = mongoose.model("program", programSchema);
-export default program;
+const gallery = mongoose.model("gallery", gallerySchema);
+export default gallery;
