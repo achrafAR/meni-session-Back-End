@@ -3,6 +3,11 @@ import mongoose from "mongoose";
 const programSchema = mongoose.Schema(
 
     {
+        // user: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     required: true,
+        //     ref: 'user',
+        // },
         title:{
             type:String,
             required:true,

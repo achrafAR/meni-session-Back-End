@@ -2,7 +2,6 @@ import Program from "../models/program.model.js";
 
 const getAll = async (req, res) =>{
     const all_programs = await Program.find();
-
     res.json({
         message:"All programs",
         status:200,
@@ -12,9 +11,10 @@ const getAll = async (req, res) =>{
 
 
 const createProgram = async (req, res) =>{
-    const { title, sub_title, description } = req.body;
-    const image = req.file ? req.file.path : null;
+    const { title, sub_title, description} = req.body;
     console.log(req.file)
+    console.log(req.body.title)
+    const image = req.file ? req.file.path : null;
     const program = new Program({ title, sub_title, description, image });
         try{
             const savedProgram = await program.save();
